@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY", default="dev-key-change-me")
 DEBUG = False
-ALLOWED_HOSTS = cinealeksandar-fkg5ete8djcacvan.spaincentral-01.azurewebsites.net
+ALLOWED_HOSTS =cinealeksandar-fkg5ete8djcacvan.spaincentral-01.azurewebsites.net
 CSRF_TRUSTED_ORIGINS =https://cinealeksandar-fkg5ete8djcacvan.spaincentral-01.azurewebsites.net/
 
 INSTALLED_APPS = [
