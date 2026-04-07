@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% load movie_tags %}
+{% block content %}<h1>{{ movie.title }} ({{ movie.release_year }})</h1><p>{{ movie.description }}</p><p><strong>Duration:</strong> {{ movie.duration_minutes }} min</p><p><strong>Average rating:</strong> {% average_movie_rating movie %}</p>{% if user == movie.created_by %}<a class="btn btn-warning" href="{% url 'movies:movie-edit' movie.slug %}">Edit</a> <a class="btn btn-danger" href="{% url 'movies:movie-delete' movie.slug %}">Delete</a>{% endif %}{% endblock %}

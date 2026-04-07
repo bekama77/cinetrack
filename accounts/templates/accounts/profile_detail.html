@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% load movie_tags %}
+{% block content %}<h1>{{ profile_obj.user.username }}</h1><p>{{ profile_obj.bio }}</p><p><strong>Watched movies:</strong> {% user_watched_count request.user %}</p><a class="btn btn-outline-primary" href="{% url 'accounts:profile-edit' %}">Edit profile</a>{% endblock %}

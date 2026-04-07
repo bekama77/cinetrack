@@ -1,0 +1,2 @@
+{% extends "base.html" %}
+{% block content %}<h1>{{ collection.title }}</h1><p>{{ collection.description }}</p><ul>{% for movie in collection.movies.all %}<li>{{ movie.title }} ({{ movie.release_year }})</li>{% empty %}<li>No movies in this collection.</li>{% endfor %}</ul>{% if user == collection.owner %}<a class="btn btn-warning" href="{% url 'watchlists:collection-edit' collection.slug %}">Edit</a> <a class="btn btn-danger" href="{% url 'watchlists:collection-delete' collection.slug %}">Delete</a>{% endif %}{% endblock %}

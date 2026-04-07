@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}About | {{ SITE_NAME }}{% endblock %}
+{% block content %}
+<h1>About CineTrack</h1>
+<p>CineTrack is a Django application for building a personal movie journal. Users can maintain watchlists, create collections, and publish reviews for the community.</p>
+<div class="row mt-4">
+    <div class="col-md-4">
+        <h3>Track</h3>
+        <p>Mark titles as watched, watching, or want to watch.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Review</h3>
+        <p>Rate movies and write public reviews with owner-based permissions.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Discover</h3>
+        <p>Get recommendations based on favorite genres saved in your profile.</p>
+    </div>
+</div>
+{% endblock %}

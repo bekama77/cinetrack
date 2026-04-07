@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+<div class="row g-3 mb-4">
+    <div class="col-md-3"><div class="card"><div class="card-body"><h5>Total entries</h5><p class="display-6">{{ total_entries }}</p></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h5>Watched</h5><p class="display-6">{{ watched_count }}</p></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h5>Watching</h5><p class="display-6">{{ watching_count }}</p></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h5>Collections</h5><p class="display-6">{{ collections_count }}</p></div></div></div>
+</div>
+
+<h2>Favorite picks</h2>
+<div class="row">
+    {% for entry in favorite_entries %}
+        <div class="col-md-4 mb-3">
+            <div class="card h-100"><div class="card-body">
+                <h5>{{ entry.movie.title }}</h5>
+                <p>Status: {{ entry.get_status_display }}</p>
+            </div></div>
+        </div>
+    {% empty %}
+        <p>No favorites yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
