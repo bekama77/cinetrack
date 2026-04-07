@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY", default="dev-key-change-me")
 DEBUG = config("DEBUG", cast=bool, default=False)
-ALLOWED_HOSTS = [host.strip() for host in config("ALLOWED_HOSTS", default="127.0.0.1,localhost").split(",") if host.strip()]
+ALLOWED_HOSTS = [https://cinealeksandar-fkg5ete8djcacvan.spaincentral-01.azurewebsites.net/]
 CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in config("CSRF_TRUSTED_ORIGINS", default="").split(",") if origin.strip()]
 
 INSTALLED_APPS = [
