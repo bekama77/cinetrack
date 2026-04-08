@@ -62,6 +62,9 @@ TEMPLATES = [
 WSGI_APPLICATION = "cinetrack.wsgi.application"
 ASGI_APPLICATION = "cinetrack.asgi.application"
 
+DATA_DIR = Path("/home/site/data")
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
 DATABASE_URL = config("DATABASE_URL", default="")
 DB_ENGINE = config("DB_ENGINE", default="sqlite")
 
@@ -84,7 +87,7 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
-            "NAME": "/home/site/data/db.sqlite3",
+            "NAME": DATA_DIR / "db.sqlite3",
         }
     }
 
