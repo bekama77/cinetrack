@@ -1,12 +1,14 @@
 from pathlib import Path
 
 import dj_database_url
+import os
 from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config("SECRET_KEY", default="dev-key-change-me")
-DEBUG = False
+SECRET_KEY = os.environ["SECRET_KEY"]
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
 ALLOWED_HOSTS = ["cinealeksandar-fkg5ete8djcacvan.spaincentral-01.azurewebsites.net"]
 CSRF_TRUSTED_ORIGINS = [
     "https://cinealeksandar-fkg5ete8djcacvan.spaincentral-01.azurewebsites.net",
